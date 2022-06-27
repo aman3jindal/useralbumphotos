@@ -1,0 +1,30 @@
+<h1>List of Albums:</h1>
+<table class="table table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Photos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.name%></td>
+        <td><%= album.description%></td>
+        <td>Photos</td>
+        <td><%= link_to "Show", user_album_path(current_user,album), method: :get %></td>
+
+        <td><%= link_to "Edit", edit_user_album_path(current_user,album), method: :get%><br></td>
+        <td><%= link_to "Destroy", user_album_path(current_user,album), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+        } %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+<div class="form-group">
+<%= link_to "Back", root_path, method: :get , class: "btn btn-success"%>
+</div>

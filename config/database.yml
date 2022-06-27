@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: database_name_development
+  pool: 5
+  host: localhost
+  username: rubyuser
+  password: Aman
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: database_name_production
+  pool: 5
+  username: rubyuser
+  password: Aman
+
+production:
+  url: <%= ENV['DATABASE_URL'] %> 

@@ -1,0 +1,20 @@
+<% @photos.each do |photo| %>
+  <% photo.user_album_photos.order("created_at DESC").each do |user_album_photos| %>
+<div style="width: 300px; height: auto">
+<%= image_tag(user_album_photos, style:"width:150px;height:150px")%>
+<div style="padding: 8px;text-align: center;font-size: 0.7em">
+<%= number_to_human_size(user_album_photos.byte_size.to_i) %>
+<%= link_to "Download", user_album_photos, target: "_blank" %>
+<%= link_to 'Delete',delete_user_album_photos_user_album_photo_path(user_album_photos,current_user,@album,photo), 
+    method: :delete, 
+    data: { confirm: 'Are you sure?' } 
+%>
+</div>
+</div>
+<% end %>
+<div class="forms-group">
+<p><strong> Tags:</strong>  <%= photo.tag%></p>
+</div>
+<%= link_to 'Edit', edit_user_album_photo_path(current_user,@album,photo)%>
+<%= link_to 'Back', user_album_path(current_user,@album), method: :get %>
+<%end%>

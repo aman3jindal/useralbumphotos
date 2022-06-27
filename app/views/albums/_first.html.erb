@@ -1,0 +1,6 @@
+<div class="form-group">
+<%= button_to "Add Album", new_user_album_path(current_user,@album), class: "btn btn-success", method: :get%>
+</div>
+<div class="form-group">
+<%= button_to "Show Album", user_albums_path(current_user, :albums), class: "btn btn-success", method: :get%>
+</div>

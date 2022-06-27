@@ -1,0 +1,15 @@
+<%= form_with model: [current_user,@album,@photo] do |form| %>
+  <div class="form-group">
+    <%= form.label :tag%><br>
+    <%= form.text_field :tag, class: "form-control", placeholder: "Tags"%>
+    <% @photo.errors.full_messages_for(:tag).each do |message| %>
+      <div><%= message %></div>
+    <%end%>
+  </div>
+  <div class="field">
+  <%= form.file_field :user_album_photos, multiple: true %>
+  </div>
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-success'%>
+  </div>
+<% end %>

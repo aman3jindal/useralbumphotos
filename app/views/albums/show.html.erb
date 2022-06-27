@@ -1,0 +1,12 @@
+<div class='form-group'>
+<strong>Name:</strong>
+<%= @album.name%>
+</p>
+<strong>Description:</strong>
+<%= @album.description%>
+</p>
+<strong>Photos:</strong>
+<%= link_to "Photos", user_album_photos_path(current_user, @album, @photo), method: :get%>
+</p>
+<%= link_to "Back", user_albums_path, method: :get , class: "btn btn-success"%>
+</div>
