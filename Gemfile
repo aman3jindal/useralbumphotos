@@ -34,6 +34,7 @@ gem "redis", "~> 4.0"
 # gem "kredis"
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'pg'
+#gem 'rails_12factor', '~> 0.0.3'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
